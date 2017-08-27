@@ -509,7 +509,10 @@ namespace pvpgn
 				return -1;
 			}
 
-			_anongame_match(c, a->queue);
+			eventlog(eventlog_level_trace, __FUNCTION__, "PG option disabled for now");
+                        return 0;
+
+                        _anongame_match(c, a->queue);
 
 			/* if enough players are queued send found packet */
 			if (players[a->queue] == _anongame_totalplayers(a->queue))
